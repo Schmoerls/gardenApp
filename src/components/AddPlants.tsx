@@ -1,5 +1,5 @@
 import { useState } from "react";
-import plantData from "../assets/plants.json";
+import { plants } from "../assets/data";
 
 export const AddPlants = ({
   closeAdd,
@@ -12,7 +12,7 @@ export const AddPlants = ({
 }) => {
   const [search, setSearch] = useState("");
 
-  const filteredData = plantData.filter(
+  const filteredData = plants.filter(
     (item) =>
       !selectedPlants.includes(item.id) &&
       item.name.toLowerCase().includes(search.toLowerCase())

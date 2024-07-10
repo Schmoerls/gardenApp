@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 
-const exampleToDos = [
-  { name: "Karotten gießen", checked: false },
-  { name: "Basilikum schneiden", checked: false },
-  { name: "Erbeeren umtopfen", checked: false },
-];
-
-export const ToDo = ({ selectedPlants }) => {
-  const [todos, setTodos] = useState([]);
+export const ToDo = ({ selectedPlants }: { selectedPlants: any }) => {
+  const [todos, setTodos] = useState<any>([]);
 
   useEffect(() => {
-    let newTodos = [];
+    let newTodos: any = [];
 
-    selectedPlants.map((plant) => {
+    selectedPlants.map((plant: any) => {
       if (plant.toDo.includes(0)) {
         newTodos = [
           ...newTodos,
@@ -36,8 +30,8 @@ export const ToDo = ({ selectedPlants }) => {
     setTodos(newTodos);
   }, [selectedPlants]);
 
-  const handleCheckToggle = (name) => {
-    const updatedTodos = todos.map((todo) =>
+  const handleCheckToggle = (name: any) => {
+    const updatedTodos = todos.map((todo: any) =>
       todo.name === name ? { ...todo, checked: !todo.checked } : todo
     );
 
@@ -46,7 +40,7 @@ export const ToDo = ({ selectedPlants }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      {todos.map((toDo) => (
+      {todos.map((toDo: any) => (
         <div className="flex gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

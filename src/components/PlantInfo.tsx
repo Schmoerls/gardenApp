@@ -52,15 +52,15 @@ export const PlantInfo = ({
         </div>
         <h2 className="w-fit text-white text-xl pb-2">Nutzung:</h2>
         <h2 className="w-fit text-xl pb-4 text-green-600 font-bold">
-          {plantData.nutzung.kulinarische_nutzung.map((use) => (
+          {plantData.nutzung.kulinarische_nutzung.map((use: any) => (
             <span className="mr-2">{use}</span>
           ))}
           <br />
-          {plantData.nutzung.medizinische_nutzung.map((use) => (
+          {plantData.nutzung.medizinische_nutzung.map((use: any) => (
             <span className="mr-2">{use}</span>
           ))}
           <br />
-          {plantData.nutzung.weitere_nutzung.map((use) => (
+          {plantData.nutzung.weitere_nutzung.map((use: any) => (
             <span className="mr-2">{use}</span>
           ))}
         </h2>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AddPlants } from "../components/AddPlants";
-import plantData from "../assets/plants.json";
+import { plants } from "../assets/data";
 import { PlantInfo } from "../components/PlantInfo";
 import bucket from "../assets/bucket.svg";
 import cut from "../assets/cut.svg";
@@ -26,9 +26,7 @@ export const MyGarden = ({
   };
 
   useEffect(() => {
-    const filteredItems = plantData.filter((item) =>
-      selectedId.includes(item.id)
-    );
+    const filteredItems = plants.filter((item) => selectedId.includes(item.id));
 
     console.log(filteredItems);
     saveDataParent(filteredItems);
@@ -47,7 +45,7 @@ export const MyGarden = ({
         <PlantInfo plantData={selectedPlant} closeInfo={setSelectedPlant} />
       )}
       <div className="grid grid-cols-2 gap-2">
-        {dataParent.map((plant) => (
+        {dataParent.map((plant: any) => (
           <p
             className={`py-8 relative rounded-xl text-xl font-bold text-gray-100`}
             style={{ background: plant.color }}
